@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chính</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Trang Đặt Tour Du Lịch Hàn Quốc</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showPage('trang-chu')">Trang chủ</a>
+        <a href="#" onclick="showPage('trang-khach-hang')">Trang Dành Cho Khách hàng</a>
+        <a href="#" onclick="showPage('admin')">Trang Quản trị</a>
+    </nav>
+
+    <div id="trang-chu" class="content">
+        <h2>Trang chủ</h2>
+        <p>Chào mừng bạn đến với trang du lịch của chúng tôi! Tại đây, bạn có thể tìm thấy thông tin về các địa điểm du lịch hấp dẫn, các gói tour phong phú và những đánh giá từ khách hàng của chúng tôi.</p>
+        <div class="tour">
+            <h3>Tour 1: Seoul - Thành phố không bao giờ ngủ</h3>
+            <img src="./seoul.jpg" alt="Seoul">
+            <p>Tham quan các địa điểm nổi tiếng như cung điện Gyeongbokgung, tháp Namsan Seoul và khu mua sắm Myeongdong.</p>
+            <button onclick="showPage('book')">Đặt vé</button>
+        </div>
+        <div class="tour">
+            <h3>Tour 2: Busan - Thành phố biển xinh đẹp</h3>
+            <img src="./busan.jpg" alt="Busan">
+            <p>Khám phá bãi biển Haeundae, chợ hải sản Jagalchi và công viên Yongdusan.</p>
+            <button onclick="showPage('book')">Đặt vé</button>
+        </div>
+        <div class="tour">
+            <h3>Tour 3: Jeju - Hòn đảo thiên đường</h3>
+            <img src="./jeju.jpg" alt="Jeju">
+            <p>Tham quan núi Hallasan, thác nước Cheonjiyeon và bãi biển Hyeopjae.</p>
+            <button onclick="showPage('book')">Đặt vé</button>
+        </div>
+        <div class="tour">
+            <h3>Tour 4: Gyeongju - Cố đô cổ kính</h3>
+            <img src="./gyeongju.jpg" alt="Gyeongju">
+            <p>Khám phá đền Bulguksa, đài thiên văn Cheomseongdae và lăng mộ Tumuli.</p>
+            <button onclick="showPage('book')">Đặt vé</button>
+        </div>
+        <div class="tour">
+            <h3>Tour 5: Incheon - Cửa ngõ quốc tế</h3>
+            <img src="./incheon.jpg" alt="Incheon">
+            <p>Tham quan công viên Trung Quốc, bãi biển Eurwangni và khu phố cổ Songdo.</p>
+            <button onclick="showPage('book')">Đặt vé</button>
+        </div>
+    </div>
+
+    <div id="trang-khach-hang" class="content hidden">
+        <h2>Trang Khách hàng</h2>
+        <div id="customer-feedback">
+            <!-- Thông tin đặt tour sẽ được thêm vào đây -->
+        </div>
+    </div>
+
+    <div id="book" class="content hidden">
+        <h2>Thông tin đặt vé</h2>
+        <form onsubmit="submitBooking(event)">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="tour">Chọn tour:</label>
+            <select id="tour" name="tour">
+                <option value="tour1">Tour 1</option>
+                <option value="tour2">Tour 2</option>
+                <option value="tour3">Tour 3</option>
+                <option value="tour4">Tour 4</option>
+                <option value="tour5">Tour 5</option>
+            </select>
+            <label for="dilai">Phương tiện di chuyển:</label>
+            <input type="text" id="dilai" name="dilai" required>
+            <label for="luutru">Địa Điểm Lưu Trú:</label>
+            <input type="text" id="luutru" name="luutru" required>
+            <label for="giatien">Giá Tiền:</label>
+            <input type="text" id="giatien" name="giatien" required>
+            <button type="submit">Đặt vé</button>
+        </form>
+    </div>
+
+    <div id="admin" class="content hidden">
+        <h2>Quản lý thông tin</h2>
+        <p>Thông tin khách hàng đặt vé sẽ được hiển thị tại đây:</p>
+        <div id="customer-table">
+            <!-- Thông tin khách hàng sẽ được thêm vào đây -->
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Trang Du Lịch
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
